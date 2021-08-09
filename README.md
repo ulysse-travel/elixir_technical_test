@@ -61,12 +61,12 @@ end
 6. Create the `Homer.Search.Server` module which use a [GenServer](https://hexdocs.pm/elixir/1.12/GenServer.html) and that must implement the following behaviour :
 ```elixir
 defmodule Homer.Search.ServerBehaviour do
-	@callback start_link({OfferRequest.t(), providers :: [module()]}) :: {:ok, pid()} | {:error, any()}
+  @callback start_link({OfferRequest.t(), providers :: [module()]}) :: {:ok, pid()} | {:error, any()}
 
   @doc """
   Get the filtered and sorted list of offers.
   """
-	@callback list_offers(pid :: pid(), limit :: integer()) :: {:ok, Offer.t()} | {:error, any()}
+  @callback list_offers(pid :: pid(), limit :: integer()) :: {:ok, Offer.t()} | {:error, any()}
 
   @doc """
   Notify the server that an offer request has been updated.
@@ -84,11 +84,11 @@ defmodule Homer.Search.Behaviour do
 
   @callback get_offer_request!(id :: integer()) :: [OfferRequest.t()]
 
-	@callback create_offer_request(attrs :: map()) :: {:ok, OfferRequest.t()} | {:error, any()}
+  @callback create_offer_request(attrs :: map()) :: {:ok, OfferRequest.t()} | {:error, any()}
 
-	@callback update_offer_request(OfferRequest.t(), attrs :: map()) :: {:ok, OfferRequest.t()} | {:error, any()}
+  @callback update_offer_request(OfferRequest.t(), attrs :: map()) :: {:ok, OfferRequest.t()} | {:error, any()}
 
-	@callback get_offers(OfferRequest.t(), limit :: integer()) :: {:ok, [Offer.t()]} | {:error, any()}
+  @callback get_offers(OfferRequest.t(), limit :: integer()) :: {:ok, [Offer.t()]} | {:error, any()}
 end
 ```
 
