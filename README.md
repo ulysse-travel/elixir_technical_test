@@ -77,7 +77,7 @@ end
 
 7. Modify the `Homer.Search.Server` module to stop the `GenServer` after 15 minutes of inactivity.
 
-8. Modify the `Homer.Search` to implement to following behaviour. You can add has many functions as you want.
+8. Modify the `Homer.Search` to implement to following behaviour. You can add as many functions as you want.
 ```elixir
 defmodule Homer.Search.Behaviour do
   @callback list_offer_requests() :: [OfferRequest.t()]
