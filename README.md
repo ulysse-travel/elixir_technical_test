@@ -42,7 +42,7 @@ live "/offer_requests/:id/show/edit", OfferRequestLive.Show, :edit
 - We can create an offer request by providing these fields (and only these one): origin, destination and a departure date.
 - Origin and destination are airport iata code.
 - All airlines are allowed by default.
-- Offers are sorted by price by default.
+- Offers are sorted by price by default (ascending order).
 - We can only update the list of allowed airlines and the sort order.
 
 4. Use the following command to create the `Offer` schema : `mix phx.gen.schema Search Offer offers origin:string destination:string departing_at:naive_datetime arriving_at:naive_datetime segments_count:integer total_amount:decimal total_duration:integer`
