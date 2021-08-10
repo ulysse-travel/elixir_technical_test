@@ -15,7 +15,7 @@ Using Phoenix Liveview, you are going to implement a simpler version of the Ulys
 
 At Ulysse, flights search uses multiple providers. One of them is [Duffel](https://duffel.com). 
 
-In order to simplify this exercise, let's say that we can only search for one-way tickets.
+In order to simplify this exercise, let's say that we can only search for one-way tickets for an adult.
 
 1. Create a new Phoenix LiveView project named `homer` :
 `mix phx.new homer --live`
