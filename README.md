@@ -45,7 +45,7 @@ live "/offer_requests/:id/show/edit", OfferRequestLive.Show, :edit
 - Offers are sorted by price by default (ascending order).
 - We can only update the list of allowed airlines and the sort order.
 
-4. Use the following command to create the `Offer` schema : `mix phx.gen.schema Search Offer offers origin:string destination:string departing_at:naive_datetime arriving_at:naive_datetime segments_count:integer total_amount:decimal total_duration:integer`
+4. Use the following command to create the `Offer` schema : `mix phx.gen.schema Search.Offer offers origin:string destination:string departing_at:naive_datetime arriving_at:naive_datetime segments_count:integer total_amount:decimal total_duration:integer`
 
 PS: `total_duration` is in minutes
 
