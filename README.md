@@ -11,7 +11,7 @@ NB: If you have never worked on Elixir, it is also a good opportunity to know mo
 - Code accuracy also matters. A readable, safe, refactorable code is a plus.
 
 ## The project
-Using Phoenix Liveview, you are going to implement a simpler version of the Ulysse flight search feature that can be found at https://odyssey.ulysse.com.
+Using Phoenix Liveview, you are going to implement a simpler version of the Ulysse flight search feature that can be found at https://ulysse.com.
 
 At Ulysse, flights search uses multiple providers. One of them is [Duffel](https://duffel.com). 
 
