@@ -11,31 +11,22 @@ NB: If you have never worked on Elixir, it is also a good opportunity to know mo
 - Code accuracy also matters. A readable, safe, refactorable code is a plus.
 
 ## The project
-Using Phoenix Liveview, you are going to implement a simpler version of the Ulysse flight search feature that can be found at https://ulysse.com.
+Using Phoenix, you are going to implement a simpler version of the Ulysse flight search feature that can be found at https://ulysse.com.
 
 At Ulysse, flights search uses multiple providers. One of them is [Duffel](https://duffel.com). 
 
 In order to simplify this exercise, let's say that we can only search for one-way tickets for an adult.
 
-1. Create a new Phoenix LiveView project named `homer` :
-`mix phx.new homer --live`
+1. Create a new Phoenix project named `homer` :
+`mix phx.new homer`
 
 2. Use the following command to create the `Search` context and the `OfferRequest` schema : 
-`mix phx.gen.live Search OfferRequest offer_requests origin:string destination:string departure_date:date sort_by:string allowed_airlines:array:string`
+`mix phx.gen.context Search OfferRequest offer_requests origin:string destination:string departure_date:date sort_by:string allowed_airlines:array:string`
 
 Replace the following in `Homer.Search.OfferRequest`:
 ```diff
 - field :sort_by, :string
 + field :sort_by, Ecto.Enum, values: [:total_amount, :total_duration]
-```
-
-Add the live routes to your browser scope in lib/homer_web/router.ex:
-```elixir
-live "/offer_requests", OfferRequestLive.Index, :index
-live "/offer_requests/new", OfferRequestLive.Index, :new
-
-live "/offer_requests/:id", OfferRequestLive.Show, :show
-live "/offer_requests/:id/show/edit", OfferRequestLive.Show, :edit
 ```
 
 3. Modify the generated code to ensure that the following specs are respected :
@@ -91,8 +82,6 @@ defmodule Homer.Search.Behaviour do
   @callback get_offers(OfferRequest.t(), limit :: integer()) :: {:ok, [Offer.t()]} | {:error, any()}
 end
 ```
-
-9. Update `/offer_requests/:id` to display the top 10 orders.
 
 ## Questions
 
