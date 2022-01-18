@@ -57,7 +57,7 @@ defmodule Homer.Search.ServerBehaviour do
   @doc """
   Get the filtered and sorted list of offers.
   """
-  @callback list_offers(pid :: pid(), limit :: integer()) :: {:ok, Offer.t()} | {:error, any()}
+  @callback list_offers(pid :: pid(), limit :: integer()) :: {:ok, [Offer.t()]} | {:error, any()}
 
   @doc """
   Notify the server that an offer request has been updated.
