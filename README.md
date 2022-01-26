@@ -66,9 +66,7 @@ defmodule Homer.Search.ServerBehaviour do
 end
 ```
 
-7. Modify the `Homer.Search.Server` module to stop the `GenServer` after 15 minutes of inactivity.
-
-8. Modify the `Homer.Search` to implement to following behaviour. You can add as many functions as you want.
+7. Modify the `Homer.Search` to implement to following behaviour. You can add as many functions as you want.
 ```elixir
 defmodule Homer.Search.Behaviour do
   @callback list_offer_requests() :: [OfferRequest.t()]
@@ -82,9 +80,3 @@ defmodule Homer.Search.Behaviour do
   @callback get_offers(OfferRequest.t(), limit :: integer()) :: {:ok, [Offer.t()]} | {:error, any()}
 end
 ```
-
-## Questions
-
-- Given than in production we can have more than 5000 offers for one offer request. What persistence strategy do you suggest for offers ? Explain why.
-
-- We now want to deploy the app we just created on multiple servers that are connected together using distributed erlang. Which parts of the code will require an update and why ?
