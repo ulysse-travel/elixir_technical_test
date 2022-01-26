@@ -66,7 +66,7 @@ defmodule Homer.Search.ServerBehaviour do
 end
 ```
 
-7. Modify the `Homer.Search` to implement to following behaviour. You can add as many functions as you want.
+7. Modify the `Homer.Search` module to implement to following behaviour by using what you did in the previous steps. You can add as many functions as you want.
 ```elixir
 defmodule Homer.Search.Behaviour do
   @callback list_offer_requests() :: [OfferRequest.t()]
